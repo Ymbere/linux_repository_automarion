@@ -10,7 +10,7 @@ def touch(path):
     with open(path, 'a'):
         os.utime(path, None)
 
-path_file = 'test.list'
+path_file = '/etc/apt/sources.list'
 mode = stat.S_IREAD
 
 if os.path.exists(path_file):    
