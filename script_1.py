@@ -43,7 +43,7 @@ with open(path_file, 'w') as file:
 
 path_file_2 = '/etc/default/isc-dhcp-server'
 
-test = 'enpos3'
+test = 'enp0s3'
 
 with open(path_file_2, 'r') as file:
     data = file.readlines()
