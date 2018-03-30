@@ -53,3 +53,19 @@ data[16] = 'INTERFACES="enp0s3"\n'
 with open(path_file_2, 'w') as file:
     file.writelines(data)
 
+path_file_3 = '/etc/network/interfaces'
+
+with open(path_file_3, 'r') as file:
+    data = file.readlines()
+
+data[11] = '#iface enp0s3 inet dhcp\n'
+
+new_lines = """iface eth0 inet static\n
+address 172.16.0.1\n
+network 172.16.0.0/24\n
+netmask 255.255.255.0\n
+broadcast 172.16.0.255\n"""
+
+with open(path_file, 'w') as file:
+    file.writelines(data)
+    file.write("%r" %new_lines)
