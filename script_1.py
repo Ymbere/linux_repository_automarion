@@ -48,7 +48,7 @@ test = 'enp0s3'
 with open(path_file_2, 'r') as file:
     data = file.readlines()
 
-data[16] = 'INTERFACES="enpos3"\n'
+data[16] = 'INTERFACES="enp0s3"\n'
 
 with open(path_file_2, 'w') as file:
     file.writelines(data)
