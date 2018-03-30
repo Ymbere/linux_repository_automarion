@@ -12,8 +12,6 @@ def touch(path):
     with open(path, 'a'):
         os.utime(path, None)
 
-pkg_name = "isc-dhcp-server"
-
 os.system('apt-get install -y isc-dhcp-server')
 
 path_file = '/etc/dhcp/dhcpd.conf'
@@ -42,3 +40,16 @@ data[61] = '}\n'
 
 with open(path_file, 'w') as file:
     file.writelines(data)
+
+path_file_2 = '/etc/default/isc-dhcp-server'
+
+test = 'enpos3'
+
+with open(path_file_2, 'r') as file:
+    data = file.readlines()
+
+data[20] = 'INTERFACES="(%s)"\n', test
+
+with open(path_file_2, 'w') as file:
+    file.writelines(data)
+
