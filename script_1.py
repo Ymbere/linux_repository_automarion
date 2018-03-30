@@ -66,6 +66,6 @@ network 172.16.0.0/24\n
 netmask 255.255.255.0\n
 broadcast 172.16.0.255\n"""
 
-with open(path_file, 'w') as file:
+with open(path_file_3, 'w') as file:
     file.writelines(data)
     file.write("%r\n" %new_lines)
