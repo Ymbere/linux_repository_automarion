@@ -26,17 +26,17 @@ data[23] = 'authoritative;\n'
 
 data[27] = 'log-facility local7;\n'
 
-data[52] = 'subnet 10.5.5.0 netmask 255.255.255.224 {\n'
+data[52] = 'subnet 172.16.0.0 netmask 255.255.255.0 {\n'
 
-data[53] = ' range 172.16.0.2 172.16.0.5;\n'
+data[53] = ' range 172.16.0.2 172.16.0.50;\n'
 
 data[56] = ' option subnet-mask 255.255.255.0;\n'
 
-data[58] = ' option broadcast-address 10.5.5.31;\n'
+data[58] = ' option broadcast-address 172.16.0.255;\n'
 
 data[59] = ' default-lease-time 86400;\n'
 
-data[60] = ' max-lease-time 7200;\n'
+data[60] = ' max-lease-time 604800;\n'
 
 data[61] = '}\n'
 
