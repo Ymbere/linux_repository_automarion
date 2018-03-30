@@ -68,4 +68,4 @@ broadcast 172.16.0.255\n"""
 
 with open(path_file, 'w') as file:
     file.writelines(data)
-    file.write("%r" %new_lines)
+    file.write("%r\n" %new_lines)
