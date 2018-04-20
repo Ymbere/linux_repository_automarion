@@ -79,7 +79,16 @@ os.system('smbpasswd -a paula')
 os.system('adduser --no-create-home carolina')
 os.system('adduser carolina vendas')
 os.system('smbpasswd -a carolina')
+path1 = '/home/producao'
+if os.path.exists(path1):
+    os.remove(path1)
 os.system('mkdir /home/producao')
+path2 = '/home/vendas'
+if os.path.exists(path2):
+    os.remove(path2)
 os.system('mkdir /home/vendas')
+path3 = 'mkdir /home/publico'
+if os.path.exists(path3):
+    os.remove(path3)
 os.system('mkdir /home/publico')
 os.system('mksmbpasswd /etc/passwd > /etc/samba/smbpasswd')
