@@ -10,6 +10,9 @@ def touch(path):
         os.utime(path, None)
 
 
+os.system('apt-get update && apt-get -y upgrade')
+os.system('apt-get -y install samba')
+
 path_file = '/etc/samba/smb.conf'
 
 if os.path.exists(path_file):
