@@ -29,7 +29,7 @@ encrypt passwords = yes\n
 smb passwd file = /etc/samba/smbpasswd\n
 interfaces = eth0\n
 bind interfaces only = yes\n
-security = user # requerido para controle de acesso dos usuários\n
+security = user\n
 username level = 2\n
 wins support = yes\n
 [Producao]\n
@@ -55,11 +55,10 @@ writable=no\n
 write list=jose\n
 veto files=/*.mp3/*.mpg/*.mpeg/*.avi/*.jpg/*.txt\n
 [publico]\n
-path = /home/publico # caminho do diretório compartilhado na máquina linux\n
-public = yes # “yes” indica que todos podem visualizar este diretório\n
-public = yes # “yes” indica que todos podem visualizar este diretório\n
+path = /home/publico\n
+public = yes\n
 only guest = yes\n
-writable = yes # permite que todos os usuários possam gravar neste diretório\n"""
+writable = yes\n"""
 
 with open(path_file, 'w') as file:
     file.writelines(data)
