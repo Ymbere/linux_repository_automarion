@@ -52,3 +52,31 @@ data[get_line_number('#  max-lease-time 7200;', path_file)] = '  max-lease-time 
 data[get_line_number('#  max-lease-time 7200;', path_file) + 1] = '}'
 
 write_file(data, path_file)
+
+os.system('dhcpd -t')
+
+path_file = '/etc/default/isc-dhcp-server'
+
+with open(path_file, 'r') as file:
+    data = file.readlines();
+
+data[get_line_number('INTERFACES=""', path_file)] = 'INTERFACES="eth0"'
+
+write_file(data, path_file)
+
+path_file = '/etc/network/interfaces'
+
+with open(path_file, 'r') as file:
+    data = file.readlines();
+
+data[get_line_number('iface eth0 dhcp', path_file)] = '#iface eth0 inet dhcp'
+
+new_lines = """iface enp0s3 inet static\n
+address 172.16.0.1\n
+network 172.16.0.0/24\n
+netmask 255.255.255.0\n
+broadcast 172.16.0.255\n"""
+
+write_file(data, path_file)
+
+write_file(new_lines, path_file)
