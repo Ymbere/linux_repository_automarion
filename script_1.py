@@ -4,9 +4,6 @@
 # Encoding: utf-8
 
 import os
-import io
-import stat
-import sys
 
 
 def touch(path):
