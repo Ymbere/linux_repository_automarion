@@ -38,7 +38,7 @@ data[get_line_number('#authoritative;', path_file)] = 'authoritative;\n'
 data[get_line_number('#subnet 10.5.5.0 netmask 255.255.255.224 {', path_file)] = \
     'subnet 172.16.0.0 netmask 255.255.255.0 {\n'
 
-data[get_line_number('# range 10.5.5.26 10.5.5.30;'), path_file] = ' range 172.16.0.2 172.16.0.50;\n'
+data[get_line_number('# range 10.5.5.26 10.5.5.30;', path_file)] = ' range 172.16.0.2 172.16.0.50;\n'
 
 data[56] = ' option subnet-mask 255.255.255.0;\n'
 
