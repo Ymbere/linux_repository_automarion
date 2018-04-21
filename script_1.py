@@ -49,4 +49,6 @@ data[get_line_number('#  default-lease-time 600;', path_file)] = '  default-leas
 
 data[get_line_number('#  max-lease-time 7200;', path_file)] = '  max-lease-time 604800;\n'
 
+data[get_line_number('#  max-lease-time 7200;', path_file) + 1] = '}'
+
 write_file(data, path_file)
