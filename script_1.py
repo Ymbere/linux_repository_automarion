@@ -71,7 +71,7 @@ with open(path_file, 'r') as file:
 
 data[get_line_number('iface eth0 inet dhcp', path_file)] = '#iface eth0 inet dhcp'
 
-new_lines = """iface enp0s3 inet static\n
+new_lines = """iface eth0 inet static\n
 address 172.16.0.1\n
 network 172.16.0.0/24\n
 netmask 255.255.255.0\n
