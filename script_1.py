@@ -69,7 +69,7 @@ path_file = '/etc/network/interfaces'
 with open(path_file, 'r') as file:
     data = file.readlines();
 
-data[get_line_number('iface eth0 dhcp', path_file)] = '#iface eth0 inet dhcp'
+data[get_line_number('iface eth0 inet dhcp', path_file)] = '#iface eth0 inet dhcp'
 
 new_lines = """iface enp0s3 inet static\n
 address 172.16.0.1\n
