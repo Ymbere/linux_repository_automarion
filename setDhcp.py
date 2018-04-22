@@ -4,7 +4,7 @@
 
 import os
 
-
+import system.system_operations
 
 s = system.system_operations
 
@@ -43,7 +43,7 @@ path_file = '/etc/default/isc-dhcp-server'
 with open(path_file, 'r') as file:
     data = file.readlines()
 
-data[SystemOperations.get_line_number('INTERFACES=""', path_file)] = 'INTERFACES="eth0"'
+data[s.get_line_number('INTERFACES=""', path_file)] = 'INTERFACES="eth0"'
 
 s.write_file(path_file, data)
 
