@@ -4,9 +4,9 @@
 
 import os
 
-from system.system_operations import SystemOperations
+import system.system_operations
 
-s = SystemOperations
+s = system.system_operations
 
 os.system('apt-get install -y isc-dhcp-server')
 
