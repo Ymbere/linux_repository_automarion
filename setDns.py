@@ -38,20 +38,20 @@ s.touch(path_file)
 data = s.read_file(path_file)
 
 data = """
-$TLL 604800
+$TTL 604800
 @    IN SOA aula.ads. root.aula.ads.(
-     2000007201       ;serial
-     28800            ;refresh
-     14400            ;retry
-     3600000          ;expire
-     84400)           ;minimum
+     200007201       ;serial
+     28800           ;refresh
+     14400           ;retry
+     3600000         ;expire
+     84400)          ;minimum
 ;
 
 www     IN A  172.16.0.1
 server  IN A  172.16.0.1
 
 @       IN MX 10  aula.ads.
-@       IN NS     aula.asds.
+@       IN NS     aula.ads.
 @       IN A      172.16.0.1
 
 """
