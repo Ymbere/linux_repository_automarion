@@ -23,7 +23,7 @@ def remove_path_if_exists(path_file):
         os.remove(path_file)
 
 
-def red_file(path_file):
+def read_file(path_file):
     with open(path_file, 'r') as file:
         data = file.readlines()
         return data
