@@ -21,3 +21,9 @@ def write_file(path, file_edited):
 def remove_path_if_exists(path_file):
     if os.path.exists(path_file):
         os.remove(path_file)
+
+
+def red_file(path_file):
+    with open(path_file, 'r') as file:
+        data = file.readlines()
+        return data
