@@ -64,7 +64,7 @@ os.system('named-checkzone server.aula.ads /etc/bind/aula.ads.zone')
 
 path_file = '/etc/bind/named.172.16.0'
 
-s.touch(path_file
+s.touch(path_file)
 
 data = s.read_file(path_file)
 
@@ -79,3 +79,15 @@ $TTL  604800
 ;
 @ IN  NS  aula.ads.
 1 IN  PTR aula.ads
+
+"""
+
+s.write_file(path_file, data)
+
+os.system('named-checkzone -z')
+
+os.system('named-checkzone 1.0.16.172.in.addr-arpa /etc/bind/named.172.16.0')
+
+path_file = '/etc/resolv.conf'
+
+""
