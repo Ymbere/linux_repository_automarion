@@ -57,3 +57,25 @@ server  IN A  172.16.0.1
 """
 
 s.write_file(path_file, data)
+
+os.system('named-checkconf -z')
+
+os.system('named-checkzone server.aula.ads /etc/bind/aula.ads.zone')
+
+path_file = '/etc/bind/named.172.16.0'
+
+s.touch(path_file
+
+data = s.read_file(path_file)
+
+data = """
+$TTL  604800
+@ IN  SOA aula.ads. root.aula.ads. (
+      2000072001  ;serial
+      28800       ;refresh
+      14400       ;retry
+      3600000     ;expire
+      86400)      ;minimun
+;
+@ IN  NS  aula.ads.
+1 IN  PTR aula.ads
